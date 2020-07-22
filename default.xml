@@ -1,0 +1,13 @@
+<manifest>
+	<remote name="glikely" fetch="https://github.com/glikely"/>
+	<remote name="tianocore" fetch="https://github.com/tianocore"/>
+
+	<project name="sct-manifest" remote="glikely" path="scripts">
+		<linkfile src="build.sh" dest="build.sh"/>
+	</project>
+	<project name="edk2" remote="tianocore"/>
+	<project name="edk2-test" remote="tianocore">
+		<linkfile src="SctPkg" dest="edk2/SctPkg"/>
+	</project>
+</manifest>
+
