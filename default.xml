@@ -1,14 +1,15 @@
 <manifest>
 	<remote name="glikely" fetch="file:///home/grant/hacking"/>
+	<remote name="samerhaj" fetch="https://github.com/samerhaj"/>
 	<remote name="tianocore" fetch="https://github.com/tianocore"/>
 	<default revision="refs/heads/master"/>
 
 	<project name="uefi-manifest" remote="glikely" path="scripts">
 		<linkfile src="build.sh" dest="build.sh"/>
 	</project>
-	<project name="edk2" remote="tianocore" revision="UDK2017"/>
-	<project name="edk2-test" remote="tianocore">
-		<linkfile src="uefi-sct/SctPkg" dest="edk2/SctPkg"/>
+	<project name="edk2" remote="tianocore" sync-s="true"/>
+	<project name="edk2-test" remote="samerhaj" revision="sct_aarch64_build_head_v1">
+		<linkfile src="uefi-sct/SctPkg" dest="SctPkg"/>
 	</project>
 </manifest>
 
