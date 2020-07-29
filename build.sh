@@ -23,10 +23,9 @@ build -n $NUM_CPUS -a AARCH64 -t GCC5 -p ShellPkg/ShellPkg.dsc -b RELEASE
 # Assemble all the files that need to be in the zip file
 mkdir -p TEST_ESP/EFI/BOOT
 cp Build/Shell/RELEASE_GCC5/AARCH64/Shell_EA4BB293-2D7F-4456-A681-1F22F42CD0BC.efi TEST_ESP/EFI/BOOT/BOOTAA64.efi
-cp Build/Shell/RELEASE_GCC5/AARCH64/Shell_EA4BB293-2D7F-4456-A681-1F22F42CD0BC.efi TEST_ESP/Shell.efi
 mkdir -p TEST_ESP/SCT
 cp -r Build/UefiSct/RELEASE_GCC5/SctPackageAARCH64/AARCH64/* TEST_ESP/SCT/
-cp scripts/SctStartup.nsh TEST_ESP/
+cp Build/UefiSct/RELEASE_GCC5/SctPackageAARCH64/SctStartup.nsh TEST_ESP/Startup.nsh
 
 # Put some version information into the ESP directory
 cat > ./Build/UefiSct/RELEASE_GCC5/SctPackageAARCH64/AARCH64/versions.txt << EOF
