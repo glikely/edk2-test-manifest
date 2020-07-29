@@ -28,7 +28,7 @@ cp -r Build/UefiSct/RELEASE_GCC5/SctPackageAARCH64/AARCH64/* TEST_ESP/SCT/
 cp Build/UefiSct/RELEASE_GCC5/SctPackageAARCH64/SctStartup.nsh TEST_ESP/Startup.nsh
 
 # Put some version information into the ESP directory
-cat > ./Build/UefiSct/RELEASE_GCC5/SctPackageAARCH64/AARCH64/versions.txt << EOF
+cat > ./TEST_ESP/versions.txt << EOF
 EDK2_VER=`git -C ./edk2 describe`
 EDK2_TEST_VER=`git -C ./edk2-test describe`
 BUILD_DATE="`date`"
