@@ -17,6 +17,7 @@ make -C edk2/BaseTools/
 # AARCH64
 
 export GCC5_AARCH64_PREFIX=aarch64-linux-gnu-
+export CROSS_COMPILE_64=aarch64-linux-gnu-
 
 # Build the UEFI shell
 build -n $NUM_CPUS -a AARCH64 -t GCC5 -p ShellPkg/ShellPkg.dsc -b RELEASE
@@ -48,6 +49,7 @@ cd ..
 # ARM
 
 export GCC5_ARM_PREFIX=arm-linux-gnueabi-
+export CROSS_COMPILE_32=arm-linux-gnueabi-
 
 # Build the UEFI shell
 build -n $NUM_CPUS -a ARM -t GCC5 -p ShellPkg/ShellPkg.dsc -b RELEASE
