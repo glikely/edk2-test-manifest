@@ -61,6 +61,6 @@ EOF
 
 # Zip up the test folder
 cd ${BUILD_ARCH}_SCT
-zip -r ../edk2-test-${BUILD_ARCH}.zip *
+zip -r ../edk2-test-${BUILD_ARCH,,}.zip *
 cd ..
 
