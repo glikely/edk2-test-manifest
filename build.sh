@@ -52,6 +52,11 @@ mkdir -p ${BUILD_ARCH}_SCT/SCT
 cp -r Build/UefiSct/RELEASE_GCC5/SctPackage${BUILD_ARCH}/$BUILD_ARCH/* ${BUILD_ARCH}_SCT/SCT/
 cp Build/UefiSct/RELEASE_GCC5/SctPackage${BUILD_ARCH}/SctStartup.nsh ${BUILD_ARCH}_SCT/Startup.nsh
 
+# Copy the SCT Parser tool into the repo
+mkdir -p ${BUILD_ARCH}_SCT/scripts
+cp sct_parser/parser.py ${BUILD_ARCH}_SCT/scripts/
+cp sct_parser/README.md ${BUILD_ARCH}_SCT/scripts/
+
 # Put some version information into the ESP directory
 cat > ./${BUILD_ARCH}_SCT/versions.txt << EOF
 EDK2_VER=`git -C ./edk2 describe`

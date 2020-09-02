@@ -9,5 +9,6 @@
 	<project path="edk2-test" name="tianocore/edk2-test">
 		<linkfile src="uefi-sct/SctPkg" dest="SctPkg"/>
 	</project>
+	<project path="sct_parser" name="phatfree/sct_parser"/>
 </manifest>
 
