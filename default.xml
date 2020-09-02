@@ -1,14 +1,12 @@
 <manifest>
-	<remote name="glikely" fetch="https://github.com/glikely"/>
-	<remote name="samerhaj" fetch="https://github.com/samerhaj"/>
-	<remote name="tianocore" fetch="https://github.com/tianocore"/>
-	<default revision="refs/heads/master"/>
+	<remote name="github" fetch="https://github.com"/>
+	<default remote="github" revision="refs/heads/master"/>
 
-	<project name="edk2-test-manifest" remote="glikely" path="scripts">
+	<project path="scripts" name="glikely/edk2-test-manifest">
 		<linkfile src="build.sh" dest="build.sh"/>
 	</project>
-	<project name="edk2" remote="tianocore" sync-s="true"/>
-	<project name="edk2-test" remote="tianocore">
+	<project path="edk2"      name="tianocore/edk2" sync-s="true"/>
+	<project path="edk2-test" name="tianocore/edk2-test">
 		<linkfile src="uefi-sct/SctPkg" dest="SctPkg"/>
 	</project>
 </manifest>
