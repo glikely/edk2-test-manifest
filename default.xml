@@ -2,8 +2,10 @@
 	<remote name="github" fetch="https://github.com"/>
 	<default remote="github" revision="refs/heads/master"/>
 
-	<project path="scripts" name="glikely/edk2-test-manifest">
+	<project path="scripts" name="PhatFree/edk2-test-manifest">
 		<linkfile src="build.sh" dest="build.sh"/>
+		<linkfile src="SBBR.seq" dest="SBBR.seq"/>
+		<linkfile src="EBBR.seq" dest="EBBR.seq"/>
 	</project>
 	<project path="edk2"      name="tianocore/edk2" sync-s="true"/>
 	<project path="edk2-test" name="tianocore/edk2-test">

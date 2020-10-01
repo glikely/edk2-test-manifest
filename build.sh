@@ -52,10 +52,20 @@ mkdir -p ${BUILD_ARCH}_SCT/SCT
 cp -r Build/UefiSct/RELEASE_GCC5/SctPackage${BUILD_ARCH}/$BUILD_ARCH/* ${BUILD_ARCH}_SCT/SCT/
 cp Build/UefiSct/RELEASE_GCC5/SctPackage${BUILD_ARCH}/SctStartup.nsh ${BUILD_ARCH}_SCT/Startup.nsh
 
+# Copy the E/S BBR sequence files
+cp SBBR.seq ${BUILD_ARCH}_SCT/SCT/Sequence/
+cp EBBR.seq ${BUILD_ARCH}_SCT/SCT/Sequence/
+
 # Copy the SCT Parser tool into the repo
 mkdir -p ${BUILD_ARCH}_SCT/scripts
-cp sct_parser/Parser.py ${BUILD_ARCH}_SCT/scripts/parser.py
+cp sct_parser/parser.py ${BUILD_ARCH}_SCT/scripts/
 cp sct_parser/README.md ${BUILD_ARCH}_SCT/scripts/
+
+ln -s ${BUILD_ARCH}_SCT/SCT/Sequence/SBBR.seq ${BUILD_ARCH}_SCT/scripts/SBBR.seq
+ln -s ${BUILD_ARCH}_SCT/SCT/Sequence/EBBR.seq ${BUILD_ARCH}_SCT/scripts/EBBR.seq
+
+
+cp  ${BUILD_ARCH}_SCT/scripts/
 
 # Put some version information into the ESP directory
 cat > ./${BUILD_ARCH}_SCT/versions.txt << EOF
@@ -66,6 +76,6 @@ EOF
 
 # Zip up the test folder
 cd ${BUILD_ARCH}_SCT
-zip -r ../edk2-test-${BUILD_ARCH,,}.zip *
+zip --symlinks -r ../edk2-test-${BUILD_ARCH,,}.zip *
 cd ..
 
