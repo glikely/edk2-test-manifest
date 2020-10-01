@@ -64,9 +64,6 @@ cp sct_parser/README.md ${BUILD_ARCH}_SCT/scripts/
 ln -s ${BUILD_ARCH}_SCT/SCT/Sequence/SBBR.seq ${BUILD_ARCH}_SCT/scripts/SBBR.seq
 ln -s ${BUILD_ARCH}_SCT/SCT/Sequence/EBBR.seq ${BUILD_ARCH}_SCT/scripts/EBBR.seq
 
-
-cp  ${BUILD_ARCH}_SCT/scripts/
-
 # Put some version information into the ESP directory
 cat > ./${BUILD_ARCH}_SCT/versions.txt << EOF
 EDK2_VER=`git -C ./edk2 describe`
