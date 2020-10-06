@@ -53,9 +53,8 @@ cp -r Build/UefiSct/RELEASE_GCC5/SctPackage${BUILD_ARCH}/$BUILD_ARCH/* ${BUILD_A
 cp Build/UefiSct/RELEASE_GCC5/SctPackage${BUILD_ARCH}/SctStartup.nsh ${BUILD_ARCH}_SCT/Startup.nsh
 
 # Copy the SCT Parser tool into the repo
-mkdir -p ${BUILD_ARCH}_SCT/scripts
-cp sct_parser/Parser.py ${BUILD_ARCH}_SCT/scripts/parser.py
-cp sct_parser/README.md ${BUILD_ARCH}_SCT/scripts/
+mkdir -p ${BUILD_ARCH}_SCT/sequence
+cp sct_parser/* ${BUILD_ARCH}_SCT/sequence/
 
 # Put some version information into the ESP directory
 cat > ./${BUILD_ARCH}_SCT/versions.txt << EOF
