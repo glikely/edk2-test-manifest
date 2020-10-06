@@ -53,8 +53,7 @@ cp -r Build/UefiSct/RELEASE_GCC5/SctPackage${BUILD_ARCH}/$BUILD_ARCH/* ${BUILD_A
 cp Build/UefiSct/RELEASE_GCC5/SctPackage${BUILD_ARCH}/SctStartup.nsh ${BUILD_ARCH}_SCT/Startup.nsh
 
 # Copy the SCT Parser tool into the repo
-mkdir -p ${BUILD_ARCH}_SCT/sequence
-cp sct_parser/* ${BUILD_ARCH}_SCT/sequence/
+cp sct_parser/* ${BUILD_ARCH}_SCT/SCT/Sequence/
 
 # Put some version information into the ESP directory
 cat > ./${BUILD_ARCH}_SCT/versions.txt << EOF
