@@ -21,3 +21,13 @@ parameter "ARM" to build.sh.
 
 A zip file will be created containing the SCT which can be unzipped onto a
 flash drive
+
+## Ccache
+
+On a system where a ccache lib dir with symlinks exists, you can reuse
+compilation results between builds by prepending the ccache lib dir to your
+$PATH.
+```bash
+export PATH="/usr/lib/ccache:$PATH"
+./build.sh
+```
