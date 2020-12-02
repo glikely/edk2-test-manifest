@@ -36,7 +36,7 @@ source ./edk2/edksetup.sh
 getconf _NPROCESSORS_ONLN
 NUM_CPUS=$((`getconf _NPROCESSORS_ONLN` + 2))
 
-make -C edk2/BaseTools/
+make -j"$NUM_CPUS" -C edk2/BaseTools/
 
 # Build the UEFI shell
 build -n $NUM_CPUS -a $BUILD_ARCH -t GCC5 -p ShellPkg/ShellPkg.dsc -b RELEASE
