@@ -2,12 +2,10 @@
 	<remote name="github" fetch="https://github.com"/>
 	<default remote="github" revision="refs/heads/master"/>
 
-	<project path="scripts" name="glikely/edk2-test-manifest">
-		<linkfile src="build.sh" dest="build.sh"/>
-	</project>
 	<project path="edk2"      name="tianocore/edk2" sync-s="true"/>
 	<project path="edk2-test" name="tianocore/edk2-test">
 		<linkfile src="uefi-sct/SctPkg" dest="SctPkg"/>
+		<linkfile src="uefi-sct/SctPkg/buildzip.sh" dest="buildzip.sh"/>
 	</project>
 	<project path="sct_parser" name="phatfree/sct_parser"/>
 </manifest>

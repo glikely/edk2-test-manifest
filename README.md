@@ -1,7 +1,9 @@
-# AARCH64 EDK2 SCT Build Environment
+# EDK2 SCT Build Environment
 
 git-repo Manifest for building the UEFI Self Certification Test (SCT) suite
-from mainline edk2 and edk2-test for AARCH64 and ARM (32-bit)
+from mainline edk2 and edk2-test for AARCH64 and ARM.
+Use this to build a zip file containing the EDK2 shell and the SCT that
+can be unzipped onto a USB drive.
 
 ## Usage
 
@@ -10,17 +12,16 @@ mkdir edk2-test-build
 cd edk2-test-build
 repo init -u https://github.com/glikely/edk2-test-manifest
 repo sync
-./build.sh
+./buildzip.sh AARCH64
 ```
 
-Build is 64-bit (AARCH64) by default.  To perform a 32-bit build pass the
-parameter "ARM" to build.sh.
+Both 64-bit (AARCH64) and 32-bit (ARM) Arm builds are supported.
+To perform a 32-bit build, pass the parameter "ARM" to buildzip.sh.
 ```bash
-./build.sh ARM
+./buildzip.sh ARM
 ```
-
 A zip file will be created containing the SCT which can be unzipped onto a
-flash drive
+flash drive.
 
 ## Ccache
 
@@ -31,3 +32,7 @@ $PATH.
 export PATH="/usr/lib/ccache:$PATH"
 ./build.sh
 ```
+
+## TODO
+
+* Add support for other architectures
