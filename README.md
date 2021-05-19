@@ -12,6 +12,7 @@ mkdir edk2-test-build
 cd edk2-test-build
 repo init -u https://github.com/glikely/edk2-test-manifest
 repo sync
+(cd edk2; git submodule update --init)
 ./buildzip.sh AARCH64
 ```
 
